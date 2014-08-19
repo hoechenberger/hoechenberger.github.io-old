@@ -57,44 +57,97 @@
 </div>
 <div class="section" id="module-pphelper.racemodel">
 <span id="pphelper-racemodel-module"></span><h2>pphelper.racemodel module<a class="headerlink" href="#module-pphelper.racemodel" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pphelper-racemodel">
+<h3>pphelper.racemodel<a class="headerlink" href="#pphelper-racemodel" title="Permalink to this headline">¶</a></h3>
+<p>Race model inequality analysis implementation, based on Ulrich, Miller,
+and Schröter (2007): &#8216;Testing the race model inequality: An algorithm
+and computer programs&#8217;, published in Behavior Research Methods 39 (2),
+pp. 291-302.</p>
+<div class="section" id="provides">
+<h4>Provides<a class="headerlink" href="#provides" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li>gen_cdf()
+Estimate the cumulative frequency polygon from response time data.</li>
+<li>gen_percentiles()
+Calculate n equally spaced percentiles.</li>
+<li>get_percentiles_from_cdf()
+Interpolate the percentile boundaries.</li>
+<li>gen_step_fun()
+Generate a step function of an observed response time distribution.</li>
+<li>compare_cdfs_from_raw_rts()
+Create cumulative distribution functions for response time data and
+calculate the race model assumptions.</li>
+</ul>
+</div></blockquote>
 <dl class="function">
 <dt id="pphelper.racemodel.compare_cdfs_from_raw_rts">
-<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">compare_cdfs_from_raw_rts</tt><big>(</big><em>RtA</em>, <em>RtB</em>, <em>RtAB</em>, <em>num_percentiles=10</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.compare_cdfs_from_raw_rts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create cumulative distribution functions for response time data and calculate the race model assumptions.</p>
+<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">compare_cdfs_from_raw_rts</tt><big>(</big><em>rt_a</em>, <em>rt_b</em>, <em>rt_ab</em>, <em>num_percentiles=10</em>, <em>percentiles=None</em>, <em>names=None</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.compare_cdfs_from_raw_rts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create cumulative distribution functions (CDFs) for response time data
+and calculate the race model assumptions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>RtA</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>rt_a</strong> : array_like</p>
 <blockquote>
-<div><p>Raw response time data from the first (usually unimodal) condition.</p>
+<div><p>Raw response time data from the first (usually unimodal)
+condition.</p>
 </div></blockquote>
-<p><strong>RtB</strong> : array_like</p>
+<p><strong>rt_b</strong> : array_like</p>
 <blockquote>
-<div><p>Raw response time data from the second (usually unimodal) condition.</p>
+<div><p>Raw response time data from the second (usually unimodal)
+condition.</p>
 </div></blockquote>
-<p><strong>RtAB</strong> : array_like</p>
+<p><strong>rt_ab</strong> : array_like</p>
 <blockquote>
-<div><p>Raw response time data from the third (usually bimodal) condition.</p>
+<div><p>Raw response time data from the third (usually bimodal)
+condition.</p>
 </div></blockquote>
-<p><strong>num_percentiles</strong> : scalar</p>
+<p><strong>num_percentiles</strong> : scalar, optional</p>
 <blockquote>
-<div><p>The number of percentiles to generate from the RT CDFs.</p>
+<div><p>The number of percentiles to generate from the response time CDFs.
+Will be ignored if <tt class="docutils literal"><span class="pre">percentiles</span></tt> is supplied.</p>
+</div></blockquote>
+<p><strong>percentiles</strong> : array_like, optional</p>
+<blockquote>
+<div><p>The percentiles for which to get values from the response time
+CDFs. If this argument is supplied, <tt class="docutils literal"><span class="pre">num_percentiles</span></tt> will be
+ignored.</p>
+</div></blockquote>
+<p><strong>names</strong> : list, optional</p>
+<blockquote>
+<div><p>A list of length 4, supplying the column names which should be
+used in the output data frame. The first element corresponds to
+<tt class="docutils literal"><span class="pre">rt_a</span></tt>, the second to <tt class="docutils literal"><span class="pre">rt_b</span></tt>, the third to <tt class="docutils literal"><span class="pre">rt_ab</span></tt>, and the
+fourth to the calculated hypothetical sum of the CDFs of <tt class="docutils literal"><span class="pre">rt_a</span></tt>
+and <tt class="docutils literal"><span class="pre">rt_b</span></tt>. If this argument is not supplied, a default list
+<tt class="docutils literal"><span class="pre">['A',</span> <span class="pre">'B',</span> <span class="pre">'AB',</span> <span class="pre">'A+B']</span></tt> will be used.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>results</strong> : DataFrame</p>
 <blockquote class="last">
-<div><p>Returns a DataFrame containing the RTs of every CDF at the generated percentiles.
-The DataFrame contains four columns: &#8216;A&#8217;, &#8216;B&#8217;, &#8216;AB&#8217; (which correspond to the input
-RtA, RtB, and RtAB, respectively), and &#8216;A+B&#8217;, which is the hypothetical sum of
-the CDFs generated from RtA and RtB. If &#8216;AB&#8217; &lt; &#8216;A+B&#8217; at any percentile, the race
-model is violated.</p>
+<div><p>A DataFrame containing the response times extracted from every CDF
+at the specified (or generated) percentiles. The DataFrame contains
+four columns. The column names are either those supplied via the
+<tt class="docutils literal"><span class="pre">names</span></tt> argument, or the default values <tt class="docutils literal"><span class="pre">A</span></tt>, <tt class="docutils literal"><span class="pre">B</span></tt>, <tt class="docutils literal"><span class="pre">AB</span></tt>,
+and <tt class="docutils literal"><span class="pre">AB</span></tt>.
+The first three columns correspond to the input data <tt class="docutils literal"><span class="pre">rt_a</span></tt>,
+<tt class="docutils literal"><span class="pre">rt_b</span></tt>, and <tt class="docutils literal"><span class="pre">rt_ab</span></tt>, respectively). The fourth column contains
+the sum of the CDFs generated from <tt class="docutils literal"><span class="pre">rt_a</span></tt> and <tt class="docutils literal"><span class="pre">rt_b</span></tt>, i.e. the
+hypothetically fastest no-integration case.
+If, at any percentile, a value in the third column is less than the
+corresponding value value in the fourth, the race model is
+violated.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Notes</p>
+<p>If the <tt class="docutils literal"><span class="pre">names</span></tt> argument is not supplied, a default list
+<tt class="docutils literal"><span class="pre">['A',</span> <span class="pre">'B',</span> <span class="pre">'AB',</span> <span class="pre">'A+B']</span></tt> will be used.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pphelper</span> <span class="kn">import</span> <span class="n">racemodel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
@@ -120,38 +173,43 @@ model is violated.</p>
 
 <dl class="function">
 <dt id="pphelper.racemodel.gen_cdf">
-<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">gen_cdf</tt><big>(</big><em>responseTimes</em>, <em>tMax=None</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.gen_cdf" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">gen_cdf</tt><big>(</big><em>rts</em>, <em>t_max=None</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.gen_cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate the cumulative frequency polygon from response time data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>responseTimes</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>rts</strong> : array_like</p>
 <blockquote>
-<div><p>The raw response time data. Data does not need to be ordered and may
-contain duplicate values.</p>
+<div><p>The raw response time data. Data does not need to be ordered and
+may contain duplicate values.</p>
 </div></blockquote>
-<p><strong>tMax</strong> : int, optional</p>
+<p><strong>t_max</strong> : int, optional</p>
 <blockquote>
-<div><p>Up to which time point (in milliseconds) the model should be calculated.
-If not specified, the maximum value of the supplied input data will be used.</p>
+<div><p>Up to which time point (in milliseconds) the model should be
+calculated. If not specified, the maximum value of the supplied
+input data will be used.</p>
 </div></blockquote>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Series</p>
 <blockquote class="last">
-<div><p>A Series containing the estimated cumulative frequency polygon, indexed by
-the time points in ms.</p>
+<div><p>A Series containing the estimated cumulative frequency polygon,
+indexed by the time points in ms.</p>
 </div></blockquote>
 </td>
 </tr>
 </tbody>
 </table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#pphelper.racemodel.get_percentiles_from_cdf" title="pphelper.racemodel.get_percentiles_from_cdf"><tt class="xref py py-obj docutils literal"><span class="pre">get_percentiles_from_cdf</span></tt></a></p>
+</div>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pphelper.racemodel</span> <span class="kn">import</span> <span class="n">gen_cdf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">RTs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">234</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">254</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">259</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">280</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">gen_cdf</span><span class="p">(</span><span class="n">RTs</span><span class="p">,</span> <span class="n">tMax</span><span class="o">=</span><span class="n">RTs</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gen_cdf</span><span class="p">(</span><span class="n">RTs</span><span class="p">,</span> <span class="n">t_max</span><span class="o">=</span><span class="n">RTs</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 <span class="go">t</span>
 <span class="go">0     0</span>
 <span class="go">1     0</span>
@@ -199,7 +257,8 @@ the time points in ms.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>n</strong> : int, optional</p>
 <blockquote>
-<div><p>The number of percentiles to generate. Defaults to 10.</p>
+<div><p>The number of percentiles to generate. Defaults to 10. Floats will
+be rounded.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -211,6 +270,10 @@ the time points in ms.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#pphelper.racemodel.get_percentiles_from_cdf" title="pphelper.racemodel.get_percentiles_from_cdf"><tt class="xref py py-obj docutils literal"><span class="pre">get_percentiles_from_cdf</span></tt></a></p>
+</div>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pphelper.racemodel</span> <span class="kn">import</span> <span class="n">gen_percentiles</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">gen_percentiles</span><span class="p">()</span>
@@ -221,26 +284,23 @@ the time points in ms.</p>
 
 <dl class="function">
 <dt id="pphelper.racemodel.gen_step_fun">
-<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">gen_step_fun</tt><big>(</big><em>C</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.gen_step_fun" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate a step function of an observed response time distribution..</p>
+<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">gen_step_fun</tt><big>(</big><em>rts</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.gen_step_fun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a step function from an observed response time distribution.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>C</strong> : array_like</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>rts</strong> : array_like</p>
 <blockquote>
-<div><p>The input data (usually respone times) to generate a step function from.
-Does not have to be ordered and may contain duplicates.</p>
+<div><p>The input data (usually response times) to generate a step function
+from. Does not have to be ordered and may contain duplicates.</p>
 </div></blockquote>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>p</strong> : ndarray</p>
-<blockquote>
-<div><p>1-dimensional array storing the percentiles, sorted from smallest to largest.</p>
-</div></blockquote>
-<p><strong>C_sorted</strong> : ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Series</p>
 <blockquote class="last">
-<div><p>1-dimensional array storing the corresponding response times.</p>
+<div><p>A Series of the ordered response times (smallest to largest),
+indexed by their respective percentiles.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -251,21 +311,21 @@ Does not have to be ordered and may contain duplicates.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">RTs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">234</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">254</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">259</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">280</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">gen_step_fun</span><span class="p">(</span><span class="n">RTs</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s">&#39;post&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sf</span> <span class="o">=</span> <span class="n">gen_step_fun</span><span class="p">(</span><span class="n">RTs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">sf</span><span class="p">,</span> <span class="n">sf</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s">&#39;post&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="function">
 <dt id="pphelper.racemodel.get_percentiles_from_cdf">
-<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">get_percentiles_from_cdf</tt><big>(</big><em>G</em>, <em>p</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.get_percentiles_from_cdf" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">get_percentiles_from_cdf</tt><big>(</big><em>cdf</em>, <em>p</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.get_percentiles_from_cdf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate the percentile boundaries.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>G</strong> : Series</p>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>cdf</strong> : Series</p>
 <blockquote>
 <div><p>The cumulative distribution polygon. Usually generated by <cite>gen_cdf()</cite>.</p>
 </div></blockquote>
@@ -284,13 +344,17 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 </tr>
 </tbody>
 </table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#pphelper.racemodel.gen_cdf" title="pphelper.racemodel.gen_cdf"><tt class="xref py py-obj docutils literal"><span class="pre">gen_cdf</span></tt></a>, <a class="reference internal" href="#pphelper.racemodel.gen_percentiles" title="pphelper.racemodel.gen_percentiles"><tt class="xref py py-obj docutils literal"><span class="pre">gen_percentiles</span></tt></a></p>
+</div>
 <p class="rubric">Examples</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pphelper.racemodel</span> <span class="kn">import</span> <span class="n">gen_cdf</span><span class="p">,</span> <span class="n">gen_percentiles</span><span class="p">,</span> <span class="n">get_percentiles_from_cdf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">RTs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">234</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">243</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">254</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="mi">259</span><span class="p">,</span> <span class="mi">270</span><span class="p">,</span> <span class="mi">280</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">CDF</span> <span class="o">=</span> <span class="n">gen_cdf</span><span class="p">(</span><span class="n">RTs</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cdf</span> <span class="o">=</span> <span class="n">gen_cdf</span><span class="p">(</span><span class="n">RTs</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">percentiles</span> <span class="o">=</span> <span class="n">gen_percentiles</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">get_percentiles_from_cdf</span><span class="p">(</span><span class="n">CDF</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_percentiles_from_cdf</span><span class="p">(</span><span class="n">cdf</span><span class="p">,</span> <span class="n">percentiles</span><span class="p">)</span>
 <span class="go">p</span>
 <span class="go">0.1    237.20</span>
 <span class="go">0.3    241.35</span>
@@ -303,8 +367,15 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 </dd></dl>
 
 </div>
+</div>
+</div>
+<div class="section" id="module-pphelper.version">
+<span id="pphelper-version-module"></span><h2>pphelper.version module<a class="headerlink" href="#module-pphelper.version" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="module-pphelper">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pphelper" title="Permalink to this headline">¶</a></h2>
+<p>pphelper is a collection of tools that can be used for the analysis of
+psychophysical data.</p>
 </div>
 </div>
 
@@ -318,7 +389,14 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
   <ul>
 <li><a class="reference internal" href="#">pphelper package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-pphelper.racemodel">pphelper.racemodel module</a></li>
+<li><a class="reference internal" href="#module-pphelper.racemodel">pphelper.racemodel module</a><ul>
+<li><a class="reference internal" href="#pphelper-racemodel">pphelper.racemodel</a><ul>
+<li><a class="reference internal" href="#provides">Provides</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-pphelper.version">pphelper.version module</a></li>
 <li><a class="reference internal" href="#module-pphelper">Module contents</a></li>
 </ul>
 </li>

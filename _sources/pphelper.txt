@@ -12,6 +12,14 @@ pphelper.racemodel module
     :undoc-members:
     :show-inheritance:
 
+pphelper.version module
+-----------------------
+
+.. automodule:: pphelper.version
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------
