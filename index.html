@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>pphelper v0.2 documentation</title>
+    <title>pphelper v0.3.1 documentation</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     'v0.2',
+        VERSION:     'v0.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -29,7 +29,7 @@
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="index.html#document-index">pphelper v0.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html#document-index">pphelper v0.3.1 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -62,12 +62,127 @@ pp. 291-302.</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt> : Assess cumulative distribution functions from response time data and calculate the race model assumptions.</li>
+<li><tt class="docutils literal"><span class="pre">compare_cdfs_from_dataframe</span></tt> : Assess cumulative distribution functions from response time data and calculate the race model assumptions.</li>
 <li><tt class="docutils literal"><span class="pre">gen_cdf</span></tt> : Estimate the cumulative distribution function from response time data.</li>
 <li><tt class="docutils literal"><span class="pre">gen_percentiles</span></tt> : Calculate equally spaced percentiles values.</li>
 <li><tt class="docutils literal"><span class="pre">gen_step_fun</span></tt> : Generate a step function from a set of observed response times.</li>
 <li><tt class="docutils literal"><span class="pre">get_percentiles_from_cdf</span></tt> : Get the values (response times) of a cumulative distribution function at the specified percentiles.</li>
+<li><tt class="docutils literal"><span class="pre">calculate_statistics</span></tt> : Perform statistical tests.</li>
 </ul>
 </div></blockquote>
+<dl class="function">
+<dt id="pphelper.racemodel.calculate_statistics">
+<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">calculate_statistics</tt><big>(</big><em>data_list</em>, <em>names=None</em>, <em>test_type='t-test'</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.calculate_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test for violations of the race model inequality.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data_list</strong> : list</p>
+<blockquote>
+<div><p>A list of DataFrames. Each individual DataFrame should contain data
+generated either by <tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt> or
+<tt class="docutils literal"><span class="pre">compare_cdfs_from_dataframe</span></tt>. Column names and indices of all
+DataFrames must be equal.</p>
+</div></blockquote>
+<p><strong>names</strong> : list, optional</p>
+<blockquote>
+<div><p>A list of strings contaning the names of the columns to compare.
+Defaults to <tt class="docutils literal"><span class="pre">['AB',</span> <span class="pre">'A+B']</span></tt>.
+The first element is passed as first population to the statistical
+function, and the second element as the second. See the <tt class="docutils literal"><span class="pre">Notes</span></tt>
+section for implications.</p>
+</div></blockquote>
+<p><strong>test_type</strong> : string, optional</p>
+<blockquote>
+<div><p>The statistical test to perform. Currently, valid values are
+<tt class="docutils literal"><span class="pre">t-test</span></tt> for a pairwise t-test, and <tt class="docutils literal"><span class="pre">wilcoxon</span></tt> for a Wilcoxon
+signed-rank test.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>results</strong> : DataFrame</p>
+<blockquote class="last">
+<div><p>A DataFrame containing the test statistic and <tt class="docutils literal"><span class="pre">p</span></tt> value for
+every percentile.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Since the first element in the <tt class="docutils literal"><span class="pre">names</span></tt> list is passed as first
+argument to the statistical test function, and the second element
+is passed as the second, in the test of a t-test a negative test
+statistic implies a smaller mean in the first column than in the
+second. Accordingly, a positive t-test statistic implied a greater
+mean in the first column than in the second.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pphelper.racemodel.compare_cdfs_from_dataframe">
+<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">compare_cdfs_from_dataframe</tt><big>(</big><em>data</em>, <em>rt_column='RT'</em>, <em>modality_column='Modality'</em>, <em>num_percentiles=10</em>, <em>percentiles=None</em>, <em>names=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.compare_cdfs_from_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create cumulative distribution functions (CDFs) for response time data
+and calculate the race model assumptions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : DataFrame</p>
+<blockquote>
+<div><p>A DataFrame with containing at least two columns: one with response
+times, and another one specifying the corresponding modalities.</p>
+</div></blockquote>
+<p><strong>rt_column</strong> : string, optional</p>
+<blockquote>
+<div><p>The name of the column containing the response times. Defaults
+to <tt class="docutils literal"><span class="pre">RT</span></tt>.</p>
+</div></blockquote>
+<p><strong>modality_column</strong> : string, optional</p>
+<blockquote>
+<div><p>The name of the column containing the modalities corresponding
+to the response times. Defaults to <tt class="docutils literal"><span class="pre">Modality</span></tt>.</p>
+</div></blockquote>
+<p><strong>names</strong> : list, optional</p>
+<blockquote>
+<div><p>A list of length 4, supplying the names of the modalities. The
+first three elements specify the modalities in the input data to
+consider. These three and the fourth argument are also used to
+label the columns in the returned DataFrame.
+If this argument is not supplied, a default list
+<tt class="docutils literal"><span class="pre">['A',</span> <span class="pre">'B',</span> <span class="pre">'AB',</span> <span class="pre">'A+B']</span></tt> will be used.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>results</strong> : DataFrame</p>
+<blockquote class="last">
+<div><p>A DataFrame containing the response times extracted from every CDF
+at the specified (or generated) percentiles. The DataFrame contains
+four columns. The column names are either those supplied via the
+<tt class="docutils literal"><span class="pre">names</span></tt> argument, or the default values <tt class="docutils literal"><span class="pre">A</span></tt>, <tt class="docutils literal"><span class="pre">B</span></tt>, <tt class="docutils literal"><span class="pre">AB</span></tt>,
+and <tt class="docutils literal"><span class="pre">AB</span></tt>.
+The first three columns correspond to the input data <tt class="docutils literal"><span class="pre">rt_a</span></tt>,
+<tt class="docutils literal"><span class="pre">rt_b</span></tt>, and <tt class="docutils literal"><span class="pre">rt_ab</span></tt>, respectively). The fourth column contains
+the sum of the CDFs generated from <tt class="docutils literal"><span class="pre">rt_a</span></tt> and <tt class="docutils literal"><span class="pre">rt_b</span></tt>, i.e. the
+hypothetically fastest no-integration case.
+If, at any percentile, a value in the third column is less than the
+corresponding value value in the fourth, the race model is
+violated.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="index.html#pphelper.racemodel.compare_cdfs_from_raw_rts" title="pphelper.racemodel.compare_cdfs_from_raw_rts"><tt class="xref py py-obj docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>This function internally calls <tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt>. Please
+see this function to find out about additional optional keyword
+arguments.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="pphelper.racemodel.compare_cdfs_from_raw_rts">
 <tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">compare_cdfs_from_raw_rts</tt><big>(</big><em>rt_a</em>, <em>rt_b</em>, <em>rt_ab</em>, <em>num_percentiles=10</em>, <em>percentiles=None</em>, <em>names=None</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.compare_cdfs_from_raw_rts" title="Permalink to this definition">¶</a></dt>
@@ -358,7 +473,7 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 
 <dl class="function">
 <dt id="pphelper.racemodel.plot_cdfs">
-<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">plot_cdfs</tt><big>(</big><em>data</em>, <em>colors=None</em>, <em>save=False</em>, <em>outfile=None</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.plot_cdfs" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">pphelper.racemodel.</tt><tt class="descname">plot_cdfs</tt><big>(</big><em>data</em>, <em>colors=None</em>, <em>outfile=None</em><big>)</big><a class="headerlink" href="#pphelper.racemodel.plot_cdfs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the response time distributions.</p>
 <p>The distributions are usually acquired via
 <tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt>.</p>
@@ -369,7 +484,7 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : DataFrame</p>
 <blockquote>
 <div><p>The response time data, usually generated by
-<tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt>.</p>
+<tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt> or <tt class="docutils literal"><span class="pre">compare_cdfs_from_dataframe</span></tt>.</p>
 </div></blockquote>
 <p><strong>colors</strong> : list, optional</p>
 <blockquote>
@@ -377,13 +492,10 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 list corresponds to the first column of response times in <tt class="docutils literal"><span class="pre">data</span></tt>,
 the second item to the second column, etc.</p>
 </div></blockquote>
-<p><strong>save</strong> : bool, optional</p>
-<blockquote>
-<div><p>Whether to save the plot to a file.</p>
-</div></blockquote>
 <p><strong>outfile</strong> : string, optional</p>
 <blockquote>
-<div><p>The output filename. Only considered if <tt class="docutils literal"><span class="pre">save</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<div><p>The output filename to save the plot to. If <tt class="docutils literal"><span class="pre">None</span></tt>, display the
+plots, but do not save them.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -400,6 +512,9 @@ the second item to the second column, etc.</p>
 <dd>Generate data in the correct input format for this function.</dd>
 </dl>
 </div>
+<p class="rubric">Notes</p>
+<p>If <tt class="docutils literal"><span class="pre">outfile</span></tt> is not supplied, plots will be displayed, but not saved
+to disk.</p>
 </dd></dl>
 
 </div>
@@ -425,12 +540,127 @@ pp. 291-302.</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt> : Assess cumulative distribution functions from response time data and calculate the race model assumptions.</li>
+<li><tt class="docutils literal"><span class="pre">compare_cdfs_from_dataframe</span></tt> : Assess cumulative distribution functions from response time data and calculate the race model assumptions.</li>
 <li><tt class="docutils literal"><span class="pre">gen_cdf</span></tt> : Estimate the cumulative distribution function from response time data.</li>
 <li><tt class="docutils literal"><span class="pre">gen_percentiles</span></tt> : Calculate equally spaced percentiles values.</li>
 <li><tt class="docutils literal"><span class="pre">gen_step_fun</span></tt> : Generate a step function from a set of observed response times.</li>
 <li><tt class="docutils literal"><span class="pre">get_percentiles_from_cdf</span></tt> : Get the values (response times) of a cumulative distribution function at the specified percentiles.</li>
+<li><tt class="docutils literal"><span class="pre">calculate_statistics</span></tt> : Perform statistical tests.</li>
 </ul>
 </div></blockquote>
+<dl class="function">
+<dt id="racemodel.calculate_statistics">
+<tt class="descclassname">racemodel.</tt><tt class="descname">calculate_statistics</tt><big>(</big><em>data_list</em>, <em>names=None</em>, <em>test_type='t-test'</em><big>)</big><a class="headerlink" href="#racemodel.calculate_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test for violations of the race model inequality.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data_list</strong> : list</p>
+<blockquote>
+<div><p>A list of DataFrames. Each individual DataFrame should contain data
+generated either by <tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt> or
+<tt class="docutils literal"><span class="pre">compare_cdfs_from_dataframe</span></tt>. Column names and indices of all
+DataFrames must be equal.</p>
+</div></blockquote>
+<p><strong>names</strong> : list, optional</p>
+<blockquote>
+<div><p>A list of strings contaning the names of the columns to compare.
+Defaults to <tt class="docutils literal"><span class="pre">['AB',</span> <span class="pre">'A+B']</span></tt>.
+The first element is passed as first population to the statistical
+function, and the second element as the second. See the <tt class="docutils literal"><span class="pre">Notes</span></tt>
+section for implications.</p>
+</div></blockquote>
+<p><strong>test_type</strong> : string, optional</p>
+<blockquote>
+<div><p>The statistical test to perform. Currently, valid values are
+<tt class="docutils literal"><span class="pre">t-test</span></tt> for a pairwise t-test, and <tt class="docutils literal"><span class="pre">wilcoxon</span></tt> for a Wilcoxon
+signed-rank test.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>results</strong> : DataFrame</p>
+<blockquote class="last">
+<div><p>A DataFrame containing the test statistic and <tt class="docutils literal"><span class="pre">p</span></tt> value for
+every percentile.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Notes</p>
+<p>Since the first element in the <tt class="docutils literal"><span class="pre">names</span></tt> list is passed as first
+argument to the statistical test function, and the second element
+is passed as the second, in the test of a t-test a negative test
+statistic implies a smaller mean in the first column than in the
+second. Accordingly, a positive t-test statistic implied a greater
+mean in the first column than in the second.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="racemodel.compare_cdfs_from_dataframe">
+<tt class="descclassname">racemodel.</tt><tt class="descname">compare_cdfs_from_dataframe</tt><big>(</big><em>data</em>, <em>rt_column='RT'</em>, <em>modality_column='Modality'</em>, <em>num_percentiles=10</em>, <em>percentiles=None</em>, <em>names=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#racemodel.compare_cdfs_from_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create cumulative distribution functions (CDFs) for response time data
+and calculate the race model assumptions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : DataFrame</p>
+<blockquote>
+<div><p>A DataFrame with containing at least two columns: one with response
+times, and another one specifying the corresponding modalities.</p>
+</div></blockquote>
+<p><strong>rt_column</strong> : string, optional</p>
+<blockquote>
+<div><p>The name of the column containing the response times. Defaults
+to <tt class="docutils literal"><span class="pre">RT</span></tt>.</p>
+</div></blockquote>
+<p><strong>modality_column</strong> : string, optional</p>
+<blockquote>
+<div><p>The name of the column containing the modalities corresponding
+to the response times. Defaults to <tt class="docutils literal"><span class="pre">Modality</span></tt>.</p>
+</div></blockquote>
+<p><strong>names</strong> : list, optional</p>
+<blockquote>
+<div><p>A list of length 4, supplying the names of the modalities. The
+first three elements specify the modalities in the input data to
+consider. These three and the fourth argument are also used to
+label the columns in the returned DataFrame.
+If this argument is not supplied, a default list
+<tt class="docutils literal"><span class="pre">['A',</span> <span class="pre">'B',</span> <span class="pre">'AB',</span> <span class="pre">'A+B']</span></tt> will be used.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>results</strong> : DataFrame</p>
+<blockquote class="last">
+<div><p>A DataFrame containing the response times extracted from every CDF
+at the specified (or generated) percentiles. The DataFrame contains
+four columns. The column names are either those supplied via the
+<tt class="docutils literal"><span class="pre">names</span></tt> argument, or the default values <tt class="docutils literal"><span class="pre">A</span></tt>, <tt class="docutils literal"><span class="pre">B</span></tt>, <tt class="docutils literal"><span class="pre">AB</span></tt>,
+and <tt class="docutils literal"><span class="pre">AB</span></tt>.
+The first three columns correspond to the input data <tt class="docutils literal"><span class="pre">rt_a</span></tt>,
+<tt class="docutils literal"><span class="pre">rt_b</span></tt>, and <tt class="docutils literal"><span class="pre">rt_ab</span></tt>, respectively). The fourth column contains
+the sum of the CDFs generated from <tt class="docutils literal"><span class="pre">rt_a</span></tt> and <tt class="docutils literal"><span class="pre">rt_b</span></tt>, i.e. the
+hypothetically fastest no-integration case.
+If, at any percentile, a value in the third column is less than the
+corresponding value value in the fourth, the race model is
+violated.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="#racemodel.compare_cdfs_from_raw_rts" title="racemodel.compare_cdfs_from_raw_rts"><tt class="xref py py-obj docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt></a></p>
+</div>
+<p class="rubric">Notes</p>
+<p>This function internally calls <tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt>. Please
+see this function to find out about additional optional keyword
+arguments.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="racemodel.compare_cdfs_from_raw_rts">
 <tt class="descclassname">racemodel.</tt><tt class="descname">compare_cdfs_from_raw_rts</tt><big>(</big><em>rt_a</em>, <em>rt_b</em>, <em>rt_ab</em>, <em>num_percentiles=10</em>, <em>percentiles=None</em>, <em>names=None</em><big>)</big><a class="headerlink" href="#racemodel.compare_cdfs_from_raw_rts" title="Permalink to this definition">¶</a></dt>
@@ -721,7 +951,7 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 
 <dl class="function">
 <dt id="racemodel.plot_cdfs">
-<tt class="descclassname">racemodel.</tt><tt class="descname">plot_cdfs</tt><big>(</big><em>data</em>, <em>colors=None</em>, <em>save=False</em>, <em>outfile=None</em><big>)</big><a class="headerlink" href="#racemodel.plot_cdfs" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">racemodel.</tt><tt class="descname">plot_cdfs</tt><big>(</big><em>data</em>, <em>colors=None</em>, <em>outfile=None</em><big>)</big><a class="headerlink" href="#racemodel.plot_cdfs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot the response time distributions.</p>
 <p>The distributions are usually acquired via
 <tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt>.</p>
@@ -732,7 +962,7 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>data</strong> : DataFrame</p>
 <blockquote>
 <div><p>The response time data, usually generated by
-<tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt>.</p>
+<tt class="docutils literal"><span class="pre">compare_cdfs_from_raw_rts</span></tt> or <tt class="docutils literal"><span class="pre">compare_cdfs_from_dataframe</span></tt>.</p>
 </div></blockquote>
 <p><strong>colors</strong> : list, optional</p>
 <blockquote>
@@ -740,13 +970,10 @@ Usually generated by <cite>gen_percentiles()</cite>.</p>
 list corresponds to the first column of response times in <tt class="docutils literal"><span class="pre">data</span></tt>,
 the second item to the second column, etc.</p>
 </div></blockquote>
-<p><strong>save</strong> : bool, optional</p>
-<blockquote>
-<div><p>Whether to save the plot to a file.</p>
-</div></blockquote>
 <p><strong>outfile</strong> : string, optional</p>
 <blockquote>
-<div><p>The output filename. Only considered if <tt class="docutils literal"><span class="pre">save</span></tt> is <tt class="docutils literal"><span class="pre">True</span></tt>.</p>
+<div><p>The output filename to save the plot to. If <tt class="docutils literal"><span class="pre">None</span></tt>, display the
+plots, but do not save them.</p>
 </div></blockquote>
 </td>
 </tr>
@@ -763,6 +990,9 @@ the second item to the second column, etc.</p>
 <dd>Generate data in the correct input format for this function.</dd>
 </dl>
 </div>
+<p class="rubric">Notes</p>
+<p>If <tt class="docutils literal"><span class="pre">outfile</span></tt> is not supplied, plots will be displayed, but not saved
+to disk.</p>
 </dd></dl>
 
 </div>
@@ -790,7 +1020,7 @@ the second item to the second column, etc.</p>
     <div class="related">
       <h3>Navigation</h3>
       <ul>
-        <li><a href="index.html#document-index">pphelper v0.2 documentation</a> &raquo;</li> 
+        <li><a href="index.html#document-index">pphelper v0.3.1 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
