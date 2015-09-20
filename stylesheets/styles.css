@@ -182,10 +182,24 @@ hr {
 }
 
 footer {
-  width:270px;
-  float:left;
-  position:fixed;
-  bottom:50px;
+  text-align:justify;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  width:500px;
+  float:right;
+  padding-bottom:50px;
+}
+
+
+@media print, screen and (min-width: 961px) {
+
+    section {
+        border: 1px solid #e5e5e5;
+        border-width: 1px 0;
+        padding:20px 0;
+        margin:0 0 20px;
+    }
 }
 
 @media print, screen and (max-width: 960px) {
