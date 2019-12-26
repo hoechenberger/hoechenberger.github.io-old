@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Niko A. Busch | Richard Höchenberger</title>
+    <link>/authors/niko-a.-busch/</link>
+      <atom:link href="/authors/niko-a.-busch/index.xml" rel="self" type="application/rss+xml" />
+    <description>Niko A. Busch</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Niko A. Busch</title>
+      <link>/authors/niko-a.-busch/</link>
+    </image>
+    
+    <item>
+      <title>Nonlinear response speedup in bimodal visual-olfactory object identification</title>
+      <link>/publication/hoechenberger-2015/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/hoechenberger-2015/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
