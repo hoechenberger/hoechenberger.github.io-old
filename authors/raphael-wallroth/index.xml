@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raphael Wallroth | Richard Höchenberger</title>
+    <link>/authors/raphael-wallroth/</link>
+      <atom:link href="/authors/raphael-wallroth/index.xml" rel="self" type="application/rss+xml" />
+    <description>Raphael Wallroth</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Raphael Wallroth</title>
+      <link>/authors/raphael-wallroth/</link>
+    </image>
+    
+    <item>
+      <title>Delta activity encodes taste information in the human brain</title>
+      <link>/publication/wallroth-2018/</link>
+      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/wallroth-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

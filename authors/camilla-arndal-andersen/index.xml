@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Camilla Arndal Andersen | Richard Höchenberger</title>
+    <link>/authors/camilla-arndal-andersen/</link>
+      <atom:link href="/authors/camilla-arndal-andersen/index.xml" rel="self" type="application/rss+xml" />
+    <description>Camilla Arndal Andersen</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Camilla Arndal Andersen</title>
+      <link>/authors/camilla-arndal-andersen/</link>
+    </image>
+    
+    <item>
+      <title>A new gustometer: Template for the construction of a portable and modular stimulator for taste and lingual touch</title>
+      <link>/publication/andersen-2018/</link>
+      <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/andersen-2018/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

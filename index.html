@@ -1,230 +1,2569 @@
-<!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<!DOCTYPE html>
+<html lang="en-us">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Richard Höchenberger</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <link rel="stylesheet" href="stylesheets/lightbox.css">
-    <script src="js/lightbox-plus-jquery.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script>
-        window.twttr = (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0],
-                t = window.twttr || {};
-            if (d.getElementById(id)) return t;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://platform.twitter.com/widgets.js";
-            fjs.parentNode.insertBefore(js, fjs);
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
-            t._e = [];
-            t.ready = function(f) {
-                t._e.push(f);
-            };
+  
 
-            return t;
-        }(document, "script", "twitter-wjs"));
-    </script>
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Richard Höchenberger">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Neuroscience, Data Science, Software Development.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Richard Höchenberger">
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@RHoechenberger">
+  <meta property="twitter:creator" content="@RHoechenberger">
+  
+  <meta property="og:site_name" content="Richard Höchenberger">
+  <meta property="og:url" content="/">
+  <meta property="og:title" content="Richard Höchenberger">
+  <meta property="og:description" content="Neuroscience, Data Science, Software Development."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    <meta property="og:updated_time" content="2019-12-19T20:53:14&#43;01:00">
+  
+
+  
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "url": "/"
+}
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Richard Höchenberger</title>
+
 </head>
-<body>
-<div class="wrapper">
-    <header>
-        <h1>Richard Höchenberger</h1>
-        <p>Cognitive Neuroscientist</p>
-        <p>
-        <ul>
-            <li><a href="index.html"><strong>About</strong></a></li>
-            <li><a href="job.html"><strong>Taste Stimulator</strong></a></li>
-        </ul>
-        </p>
 
-        <p class="view">
-            <a class="twitter-timeline"
-               data-dnt="true"
-               href="https://twitter.com/RHoechenberger"
-               data-widget-id="645579366362128384"
-               data-tweet-limit="1"
-               data-chrome="nofooter">
-                Tweets by @RHoechenberger
-            </a>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" >
 
-        </p>
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
 
-    </header>
-    <section>
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
 
-        <h2>Internship offer</h2>
-        <p>
-            <strong>I'm offering an internship!</strong>
-            <a href="internship.html">Details can be found here.</a>
-        </p>
-        <h2>
-            <a id="about-me" class="anchor" href="#about-me" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Me</h2>
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
 
-        <p>My main professional interests are in the fundamental and temporal aspects of multisensory perception.
-            I am currently working on my PhD in the laboratory of <a href="http://www.kathrinohla.net/">Dr Kathrin Ohla</a> at the <a href="http://dife.de">German Institute of Human Nutrition</a>, where my principal focus is on interaction between the chemical and non-chemical senses.</p>
-
-        <p>Aside from neuroscience, I am very much interested in progressive social movements; urban planning and city development and its social implications; security in general and IT security in particular; and different types of endurance sports.</p>
-
-        <h2>
-            <a id="skills--techniques" class="anchor" href="#skills--techniques" aria-hidden="true"><span class="octicon octicon-link"></span></a>Skills &amp; Techniques</h2>
-
-        <ul>
-            <li>
-                <strong>Programming &amp; Analytics:</strong> Python, R (including ggplot), Matlab, and Common Lisp on GNU/Linux, Mac OS X, and Windows</li>
-            <li>
-                <strong>Typesetting:</strong> LaTeX &amp; LyX</li>
-            <li>
-                <strong>Psychophysics:</strong> PsychoPy, Psychtoolbox</li>
-            <li>
-                <strong>EEG:</strong> <em>Acquisition:</em> BrainVision Recorder &amp; PyCorder, Biosemi ActiView; <em>Analysis:</em> <a href="http://martinos.org/mne/stable/index.html">MNE</a>, EEGLAB</li>
-            <li>
-                <strong>Hardware &amp; Electronics:</strong> National Instruments data-acquisition boards for experimental control, custom design of stimulation and measurement hardware and corresponding software interfaces for psychophysical testing</li>
-        </ul>
-
-        <h2>
-            <a id="publications" class="anchor" href="#publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publications</h2>
-
-        <p>My <strong>ORCID</strong> is <a href="http://orcid.org/0000-0002-0380-4798">0000-0002-0380-4798</a>; my <strong>ResearcherID</strong> is <a href="https://www.researcherid.com/rid/I-8360-2015">I-8360-2015</a>. My publications are also listed on my <strong><a href="https://scholar.google.com/citations?user=CJg7pA4AAAAJ">Google Scholar profile</a></strong>.</p>
-
-        <h3>
-            <a id="articles" class="anchor" href="#articles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Articles</h3>
-
-        <ul>
-            <li>
-                S Hardikar, <strong>R Höchenberger,</strong> A Villringer, K Ohla (2016):
-                <a href="http://dx.doi.org/10.1016/j.appet.2016.12.017">Higher sensitivity to sweet and salty taste in obese compared to lean individuals.</a> <em>Appetite</em> (in press). doi: 10.1016/j.appet.2016.12.017
-            </li>
-
-            <li>
-                <strong>R Höchenberger</strong>, NA Busch, K Ohla (2015):
-                <a href="http://dx.doi.org/10.3389/fpsyg.2015.01477">Nonlinear response speedup in bimodal visual-olfactory object identification.</a> <em>Frontiers in Psychology</em> 6:1477. doi: 10.3389/fpsyg.2015.01477
-            </li>
-        </ul>
-
-        <h3>
-            <a id="talks-presentations--posters" class="anchor" href="#talks-presentations--posters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Talks, Presentations &amp; Posters</h3>
-
-        <ul>
-            <li>
-                <strong>R Höchenbegerger</strong> & Kathrin Ohla (2016): Rapid estimation of taste sensitivity. Talk at the December Meeting on Smell and Taste in Dresden, Germany. (Conference Talk)
-            </li>
-            <li>
-                <strong>R Höchenberger,</strong> NA Busch, K Ohla (2016): Bimodal facilitation in a visual-olfactory response time task. Poster presented at Psychologie und Gehirn in Berlin, Germany. (Poster)
-            </li>
-            <li>
-                <strong>R Höchenberger,</strong> NA Busch, K Ohla (2015): The race for food: Response facilitation in visual-olfactory stimulation. Poster presented at the International Multisensory Research Forum (IMRF) in Pisa, Italy. (Poster)
-            </li>
-            <li>
-                <strong>R Höchenberger,</strong> NA Busch, K Ohla (2015): Response facilitation in visual-olfactory stimulation. Poster presented at Tagung experimentell arbeitender Psychologen (TeaP) in Hildesheim, Germany. (Poster)
-            </li>
-            <li>
-                <strong>R Höchenberger,</strong> NA Busch, K Ohla (2014): Response time speedup in visual-olfactory stimulation suggests multisensory facilitation. Poster presented at the International Multisensory Research Forum (IMRF) in Amsterdam, Netherlands. (Poster)</li>
-            <li>LT Boenke, <strong>R Höchenberger,</strong> A Zeghbib, D Alais, FW Ohl (2013): <a href="http://www.perceptionweb.com/abstract.cgi?id=v130807">Interaction of spatial and temporal processing in the context of audio-visual synchrony judgment and temporal-order judgment.</a> <em>Perception</em> 42, ECVP Abstract Supplement, 171. (Conference Talk)</li>
-            <li>LT Boenke, <strong>R Höchenberger,</strong> FW Ohl, D Alais (2011): <a href="http://i-perception.perceptionweb.com/journal/I/article/ic832">Temporal aspects of sound induced visual fission and fusion in the double-flash illusion paradigm.</a> <em>i-Perception</em> 2(8), 832-832. (Poster)</li>
-        </ul>
-
-        <h2>
-            <a id="education" class="anchor" href="#education" aria-hidden="true"><span class="octicon octicon-link"></span></a>Education</h2>
-
-        <ul>
-            <li>
-                <strong>Mar 2013–present:</strong> Ongoing work on my PhD in medical science. German Institute of Human Nutrition, Nuthetal, Germany &amp; Charité University Medicine Berlin, Germany.
-                Supvervision: Dr Kathrin Ohla &amp; Prof Dr Niko A Busch</li>
-            <li>
-                <strong>Oct 2005–Jun 2013:</strong> Diploma (MSc) in Biosystems Engineering. Thesis: <em>Perceiving the temporal order of events without perceiving their succession: A cross-modal study in humans using the McGurk effect.</em> Otto-von-Guericke-Universität, Magdeburg, Germany.
-                Supervison: Lars T Boenke &amp; Prof Dr Frank W Ohl</li>
-        </ul>
-
-        <h2>
-            <a id="research-experience" class="anchor" href="#research-experience" aria-hidden="true"><span class="octicon octicon-link"></span></a>Research Experience</h2>
-
-        <ul>
-            <li>
-                <strong>Dec 2011–Apr 2012:</strong> Research stay at Prof Dr David Alais' vision lab
-                Research topic: <em>Investigation of cross-modal interaction in humans by utilizing the McGurk illusion</em>. University of Sydney, NSW, Australia.
-                Supervision: Lars T Boenke, Prof Dr David Alais</li>
-            <li>
-                <strong>Nov 2010–Nov 2011:</strong> Student research project. Topic: <em>Temporal aspects of sound-induced fission and fusion in the double-flash illusion paradigm.</em> Otto-von-Guericke-Universität, Magdeburg, Germany &amp; Leibniz Institute for Neurobiology, Magdeburg, Germany.
-                Supervison: Lars T Boenke</li>
-            <li>
-                <strong>Jun 2009–Mar 2013:</strong> Research assistant of Lars T Boenke (audio-visual temporal
-                order/synchrony judgment, EEG). Leibniz Institute for Neurobiology, Magdeburg, Germany.</li>
-            <li>
-                <strong>Nov 2006–Dec 2008:</strong> Research assistant in FORSYS systems biology program. Institute of Mathematical Optimization, Otto-von-Guericke-Universität, Magdeburg, Germany.
-                Supervision: Dr Utz-Uwe Haus</li>
-        </ul>
-
-        <h2>
-            <a id="stipends--grants" class="anchor" href="#stipends--grants" aria-hidden="true"><span class="octicon octicon-link"></span></a>Stipends &amp; Grants</h2>
-
-        <ul>
-            <li><strong>2016&ndash;2017:</strong> Internal project funding at the German Institute of Human Nutrition (DIfE) for the investigation of taste-taste interactions</li>
-            <li><strong>2011:</strong> EU-funded (<a href="http://www.timely-cost.eu/">TIMELY</a>) participation in the <em>Time
-                and the Conscious Brain</em> workshop, Delmenhorst, Germany.</li>
-        </ul>
-
-        <h2>Projects under my Supervision</h2>
-        <p>I am currently supervising three Master's projects:
-        <ul>
-            <li><strong>Maria J Pie</strong> Development and validation of methods for rapid estimation of taste thresholds.</li>
-            <li><strong>Lorenzo Alfine</strong> Lateralized perception of taste: Stimulation, psychophysics, and neural correlates.</li>
-            <li><strong>Katharina Hamann</strong> A new method for rapid taste sensitivity estimation.</li>
-        </ul>
-        </p>
-
-        <h2>
-            <a id="connect" class="anchor" href="#connect" aria-hidden="true"><span class="octicon octicon-link"></span></a>Connect</h2>
-
-        <ul>
-            <li><a href="https://twitter.com/RHoechenberger">Twitter</a></li>
-            <li><a href="https://facebook.com/hoechenberger">Facebook</a></li>
-            <li><a href="https://plus.google.com/+RichardH%C3%B6chenberger">Google+</a></li>
-            <li><a href="https://www.researchgate.net/profile/Richard_Hoechenberger">ResearchGate</a></li>
-            <li><a href="https://dife.academia.edu/RichardH%C3%B6chenberger">Academia.edu</a></li>
-            <li><a href="https://de.linkedin.com/in/hoechenberger">LinkedIn</a></li>
-            <li><a href="http://loop.frontiersin.org/people/228736/">Loop</a></li>
-            <li><a href="https://github.com/hoechenberger">GitHub</a></li>
-        </ul>
-
-        <p>German Institute of Human Nutrition<br>
-            – Psychophysiology of Food Perception –<br>
-            Arthur-Scheunert-Allee 114–116<br>
-            14558 Nuthetal<br>
-            Germany</p>
-
-        <p>Phone: +49 33 200 88 2427</p>
-
-        <p>Email: <code>richard.hoechenberger@dife.de</code>.<br>
-            For encrypted email communication, you may use
-        </p>
-        <ul>
-            <li>
-                <a href="files/hoechenberger.asc">my PGP key</a> with the fingerprint <pre>54D7 E550 653C FD18 7F48  A87B 7F19 9F9F FAFD 87ED</pre>.
-            </li>
-            <li>
-                <a href="files/hoechenberger.pem">my S/MIME certificate</a> with the SKI <pre>DC:F7:41:B6:49:1B:40:3E:06:93:C7:67:BD:2D:FA:EA:07:4D:B0:04</pre>
-                and SHA1 fingerprint <pre>EF:C6:99:BD:6F:29:46:E7:B6:6F:EE:42:74:07:BC:5A:56:E0:9F:8B</pre>.
-            </li>
-        </ul>
-
-        <h2>
-            <a id="social-responsibility" class="anchor" href="#social-responsibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Social Responsibility</h2>
-
-        <p><a href="http://www.proasyl.de/en/"><img align="right" src="images/pro_asyl.png" alt="Pro Asyl"></a>
-            I'm a supporter of <a href="http://www.proasyl.de/en/">Pro Asyl</a>, an association dedicated to the preservation, defense, and enforcement of fundamental human rights of refugees in Germany and Europe.</p>
     </section>
-    <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Based on a theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-    </footer>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Richard Höchenberger</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Richard Höchenberger</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#methods" data-target="#methods"><span>Methods</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#software" data-target="#software"><span>Software</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications" data-target="#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience" data-target="#experience"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact" data-target="#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+
+
+
+
+
+
+
+
+<span class="js-widget-page d-none"></span>
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="about" class="home-section wg-about   "  >
+    <div class="container">
+      
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4">
+    <div id="profile">
+
+      
+      
+      <img class="portrait" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+      
+
+      <div class="portrait-title">
+        <h2>Richard Höchenberger</h2>
+        <h3>Neuroscience, Data Science, Software Development.</h3>
+
+        
+        <h3>
+          <a href="https://www.fz-juelich.de/portal/EN/" target="_blank" rel="noopener">
+          <span>Research Center Jülich, Cologne Area, Germany</span>
+          </a>
+        </h3>
+        
+      </div>
+
+      <ul class="network-icon" aria-hidden="true">
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="/#contact" >
+            <i class="fas fa-envelope big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://github.com/hoechenberger" target="_blank" rel="noopener">
+            <i class="fab fa-github big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://orcid.org/0000-0002-0380-4798" target="_blank" rel="noopener">
+            <i class="ai ai-orcid big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://scholar.google.com/citations?user=CJg7pA4AAAAJ" target="_blank" rel="noopener">
+            <i class="ai ai-google-scholar big-icon"></i>
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        
+        
+        
+        
+        
+          
+        
+        <li>
+          <a href="https://twitter.com/RHoechenberger" target="_blank" rel="noopener">
+            <i class="fab fa-twitter big-icon"></i>
+          </a>
+        </li>
+        
+      </ul>
+
+    </div>
+  </div>
+  <div class="col-12 col-lg-8">
+
+    
+    <h1>About Me</h1>
+
+    <p>Hi, I&rsquo;m Richard, a neuroscientist with a strong interest in software
+development. I wish to better understand how we perceive our environment
+and how we make decisions on a basic level.</p>
+
+<p>I will be joining the <a href="https://team.inria.fr/parietal/" target="_blank">Parietal team</a> at
+<a href="https://www.inria.fr/en/centre-inria-saclay-ile-de-france" target="_blank">Inria Saclay – Île-de-France</a>
+next spring to work on <a href="https://mne.tools/stable/index.html" target="_blank">MNE-Python</a>
+full-time.</p>
+
+
+    <div class="row">
+
+      
+      <div class="col-md-5">
+        <h3>Interests</h3>
+        <ul class="ul-interests">
+          
+          <li>Psychophysics &amp; Multisensory Interactions</li>
+          
+          <li>Decision Making</li>
+          
+          <li>System Dynamics</li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="col-md-7">
+        <h3>Education</h3>
+        <ul class="ul-edu fa-ul">
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">PhD in Psychology, 2017</p>
+              <p class="institution">University of Münster, Germany</p>
+            </div>
+          </li>
+          
+          <li>
+            <i class="fa-li fas fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">Diploma in Biosystems Engineering (M.Eng.), 2013</p>
+              <p class="institution">University of Magdeburg, Germany</p>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+    </div>
+  </div>
 </div>
-<script src="js/scale.fix.js"></script>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="methods" class="home-section wg-featurette   "  >
+    <div class="container">
+      
+
+
+<div class="row featurette">
+  
+  <div class="col-md-12 section-heading">
+    <h1>Methods &amp; Technologies</h1>
+    <p>A selection of what I do, and the tools I use for getting things done.</p>
+  </div>
+  
+
+  
+
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fas fa-eye"></i></div>
+    <h3>Psychophysics</h3>
+    <p>Response times, adaptive methods, TOJ/SJ</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="far fa-brain"></i></div>
+    <h3>EEG</h3>
+    <p>Sensor- and source-level analysis via MNE-Python</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fas fa-microscope"></i></div>
+    <h3>Lab Tools</h3>
+    <p>Development, setup, and maintenance of laboratory equipment</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fab fa-python"></i></div>
+    <h3>Python</h3>
+    <p>pandas, xarray, NumPy, matplotlib, seaborn</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fab fa-r-project"></i></div>
+    <h3>R</h3>
+    <p>Linear mixed models</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fas fa-project-diagram"></i></div>
+    <h3>Machine Learning</h3>
+    <p>scikit-learn, TensorFlow(.js)</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fab fa-react"></i></div>
+    <h3>Frontend</h3>
+    <p>React &amp; JavaScript</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fas fa-server"></i></div>
+    <h3>Backend</h3>
+    <p>Flask, sqlalchemy, MariaDB</p>
+  </div>
+  
+  
+  
+  
+    
+  
+  <div class="col-12 col-sm-4">
+    <div class="featurette-icon"><i class="fab fa-docker"></i></div>
+    <h3>Containerization</h3>
+    <p>Docker</p>
+  </div>
+  
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="software" class="home-section wg-portfolio   "  >
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-4 section-heading">
+
+    <h1>Software</h1>
+    <p>Some of the scientific software I have developed, or significantly contributed to.</p>
+
+  </div>
+  <div class="col-xs-12 col-md-8">
+
+
+
+    
+
+    
+
+    <div class=" row js-layout-row project-showcase mt-5">
+      
+
+        
+        
+        
+          
+          
+        
+
+        
+          
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="col-lg-12 project-item isotope-item ">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <h3 class="article-title mb-0 mt-0"><a href="https://github.com/hoechenberger/webtaste" target="_blank" rel="noopener">webtaste</a></h3>
+
+      
+      <div class="article-style">
+        Web-based taste and smell sensitivity estimation using adaptive procedures.
+      </div>
+      
+
+      <div class="btn-links">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6 order-first ">
+      
+      
+      
+      <a href="https://github.com/hoechenberger/webtaste" target="_blank" rel="noopener">
+        <img src="/software/webtaste/featured_hub5cb2688d53c5043ba40418fedca798f_47094_540x0_resize_lanczos_2.png" alt="">
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+          
+          
+        
+
+        
+          
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="col-lg-12 project-item isotope-item ">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <h3 class="article-title mb-0 mt-0"><a href="https://github.com/hoechenberger/questplus" target="_blank" rel="noopener">questplus</a></h3>
+
+      
+      <div class="article-style">
+        A Python implementation of QUEST+, a modern Bayesian adaptive method for use in the psychophysics lab.
+      </div>
+      
+
+      <div class="btn-links">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6 order-first ">
+      
+      
+      
+      <a href="https://github.com/hoechenberger/questplus" target="_blank" rel="noopener">
+        <img src="/software/questplus/featured_hu3b8d7ade95ff6815f1820fed94e1adda_269717_540x0_resize_lanczos_2.png" alt="">
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+          
+          
+        
+
+        
+          
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="col-lg-12 project-item isotope-item ">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <h3 class="article-title mb-0 mt-0"><a href="https://pyqmix.readthedocs.io/" target="_blank" rel="noopener">pyqmix</a></h3>
+
+      
+      <div class="article-style">
+        Control Cetoni syringe pump systems via an intuitive, high-level Python interface.
+      </div>
+      
+
+      <div class="btn-links">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6 order-first ">
+      
+      
+      
+      <a href="https://pyqmix.readthedocs.io/" target="_blank" rel="noopener">
+        <img src="/software/pyqmix/featured_hu9b95c6f0dd35c65369a1fe5e47ee2048_638048_540x0_resize_lanczos_2.png" alt="">
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+          
+          
+        
+
+        
+          
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="col-lg-12 project-item isotope-item ">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <h3 class="article-title mb-0 mt-0"><a href="https://github.com/psyfood/pyqmix-web" target="_blank" rel="noopener">pyqmix-web</a></h3>
+
+      
+      <div class="article-style">
+        Browser-based remote control of Cetoni syringe pump systems via pyqmix.
+      </div>
+      
+
+      <div class="btn-links">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6 order-first ">
+      
+      
+      
+      <a href="https://github.com/psyfood/pyqmix-web" target="_blank" rel="noopener">
+        <img src="/software/pyqmix-web/featured_hu80c297fdaf6c1ce67a5f6cd85e21bb59_127253_540x0_resize_lanczos_2.png" alt="">
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+
+        
+        
+        
+          
+          
+        
+
+        
+          
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<div class="col-lg-12 project-item isotope-item ">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6">
+      <h3 class="article-title mb-0 mt-0"><a href="https://pphelper.readthedocs.io/en/latest/" target="_blank" rel="noopener">pphelper</a></h3>
+
+      
+      <div class="article-style">
+        A collection of tools for device control in our psychophysiology lab, and a response time analysis toolbox.
+      </div>
+      
+
+      <div class="btn-links">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+    <div class="col-12 col-md-6 order-first ">
+      
+      
+      
+      <a href="https://pphelper.readthedocs.io/en/latest/" target="_blank" rel="noopener">
+        <img src="/software/pphelper/featured_hu5133972c3b247a2d38de747a1071e4ae_242608_540x0_resize_lanczos_2.png" alt="">
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+        
+
+      
+    </div>
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="publications" class="home-section wg-pages   "  >
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Recent Publications</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+
+    <div class="alert alert-note">
+  <div>
+    <a href="/publication/">Search for a publication</a>.
+  </div>
+</div>
+
+
+    
+      
+        
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span>Stefan Appelhoff</span>, <span>Matthew Sanderson</span>, <span>Teon Brooks</span>, <span>Marijn van Vliet</span>, <span>Romain Quentin</span>, <span>Chris Holdgraf</span>, <span>Maximilien Chaumon</span>, <span>Ezequiel Mikulan</span>, <span>Kambiz Tavabi</span>, <span>Richard Höchenberger</span>, <span>Dominik Welke</span>, <span>Clemens Brunner</span>, <span>Alexander Rockhill</span>, <span>Eric Larson</span>, <span>Alexandre Gramfort</span>, <span>Mainak Jas</span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    December 2019
+  </span>
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="pub-publication">
+    
+      <em>Journal of Open Source Software</em>
+    
+  </span>
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+
+  <h3 class="article-title mb-1 mt-3">
+    <a href="/publication/appelhoff-2019/">MNE-BIDS: Organizing electrophysiological data into the BIDS format and facilitating their analysis</a>
+  </h3>
+
+  
+
+  
+  <div class="btn-links">
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/appelhoff-2019/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.21105/joss.01896" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+  </div>
+  
+
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span>Richard Höchenberger</span>, <span>Kathrin Ohla</span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    December 2019
+  </span>
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="pub-publication">
+    
+      <em>Nutrients</em>
+    
+  </span>
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+
+  <h3 class="article-title mb-1 mt-3">
+    <a href="/publication/hoechenberger-2019-a/">Repeatability of Taste Recognition Threshold Measurements with QUEST and quick Yes–No</a>
+  </h3>
+
+  
+
+  
+  <div class="btn-links">
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/hoechenberger-2019-a/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.3390/nu12010024" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+  </div>
+  
+
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span>Richard Höchenberger</span>, <span>Kathrin Ohla</span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    June 2019
+  </span>
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="pub-publication">
+    
+      <em>Nutrients</em>
+    
+  </span>
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+
+  <h3 class="article-title mb-1 mt-3">
+    <a href="/publication/hoechenberger-2019/">Estimation of olfactory sensitivity using a Bayesian adaptive method</a>
+  </h3>
+
+  
+
+  
+  <div class="btn-links">
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/hoechenberger-2019/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.3390/nu11061278" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+  </div>
+  
+
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span>Jonathan Peirce</span>, <span>Jeremy R. Gray</span>, <span>Sol Simpson</span>, <span>Michael MacAskill</span>, <span>Richard Höchenberger</span>, <span>Hiroyuki Sogo</span>, <span>Erik Kastman</span>, <span>Jonas Kristoffer Lindeløv</span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    February 2019
+  </span>
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="pub-publication">
+    
+      <em>Behavior Research Methods</em>
+    
+  </span>
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+
+  <h3 class="article-title mb-1 mt-3">
+    <a href="/publication/peirce-2019/">PsychoPy2: Experiments in behavior made easy</a>
+  </h3>
+
+  
+
+  
+  <div class="btn-links">
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/peirce-2019/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.3758/s13428-018-01193-y" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+  </div>
+  
+
+</div>
+
+      
+    
+      
+        
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+<div class="card-simple">
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span>Camilla Arndal Andersen</span>, <span>Lorenzo Alfine</span>, <span>Kathrin Ohla</span>, <span>Richard Höchenberger</span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    December 2018
+  </span>
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="pub-publication">
+    
+      <em>Behavior Research Methods</em>
+    
+  </span>
+  
+
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+  
+  
+  
+
+  <h3 class="article-title mb-1 mt-3">
+    <a href="/publication/andersen-2018/">A new gustometer: Template for the construction of a portable and modular stimulator for taste and lingual touch</a>
+  </h3>
+
+  
+
+  
+  <div class="btn-links">
+    
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/andersen-2018/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.3758/s13428-018-1145-1" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+  </div>
+  
+
+</div>
+
+      
+    
+
+    
+    <div class="see-all">
+      <a href="/publication/">
+        See all publications
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </div>
+    
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="experience" class="home-section wg-experience   "  >
+    <div class="container">
+      
+
+
+
+<div class="row">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Experience</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+    
+
+    
+    
+    
+    <div class="row experience">
+      
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col ">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border exp-fill">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Post-doctoral researcher</h4>
+            <h4 class="card-title exp-company text-muted my-0"><a href="https://www.fz-juelich.de/portal/EN/" target="_blank" rel="noopener">Research Center Jülich</a></h4>
+            <div class="text-muted exp-meta">
+              Jan 2018 –
+              
+                Present
+              
+              
+                <span class="middot-divider"></span>
+                <span>Cologne area, Germany</span>
+              
+            </div>
+            <div class="card-text">Tasks include:</p>
+
+<ul>
+<li>Establishment of an EEG source estimation pipeline based on the
+<a href="https://mne.tools/stable/index.html" target="_blank">MNE-Python</a> software.</li>
+<li>Refinement and extension of our gustatory stimulator and its Python control
+software.</li>
+<li>Supervision of the development of a web-based gustometer control interface,
+which was carried out by
+<a href="https://www.linkedin.com/in/camilla-arndal-andersen-5a517989/" target="_blank">Camilla Arndal Andersen</a>.</li>
+<li>Adding gustometer support to PsychoPy for simplified creation of taste
+studies via a graphical user interface.</li>
+<li>Implementation of the QUEST+ adaptive algorithm in Python.</li>
+<li>Validation of the QUEST+ method for gustatory sensitivity estimation.</li>
+<li>Development and deployment of a web-based software for gustatory and
+olfactory sensitivity measurement.
+<br /></li>
+</ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row experience">
+      
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border ">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Post-doctoral researcher</h4>
+            <h4 class="card-title exp-company text-muted my-0"><a href="http://www.dife.de" target="_blank" rel="noopener">German Institute of Human Nutrition Potsdam-Rehbrücke</a></h4>
+            <div class="text-muted exp-meta">
+              Apr 2017 –
+              
+                Dec 2017
+              
+              
+                <span class="middot-divider"></span>
+                <span>Berlin area, Germany</span>
+              
+            </div>
+            <div class="card-text">Tasks included:</p>
+
+<ul>
+<li>Successful development of a new gustatory stimulator, together with
+<a href="https://www.linkedin.com/in/lorenzo-alfine-1b2110113/" target="_blank">Lorenzo Alfine</a>
+and
+<a href="https://www.linkedin.com/in/camilla-arndal-andersen-5a517989/" target="_blank">Camilla Arndal Andersen</a>.
+The control software is written in Python.</li>
+<li>Validation of new methods for gustatory and olfactory sensitivity
+estimation.
+<br /></li>
+</ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row experience">
+      
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border ">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Doctoral student</h4>
+            <h4 class="card-title exp-company text-muted my-0"><a href="http://www.dife.de" target="_blank" rel="noopener">German Institute of Human Nutrition Potsdam-Rehbrücke</a></h4>
+            <div class="text-muted exp-meta">
+              Mar 2013 –
+              
+                Mar 2017
+              
+              
+                <span class="middot-divider"></span>
+                <span>Berlin area, Germany</span>
+              
+            </div>
+            <div class="card-text"><p>Thesis: &ldquo;Olfactory stimuli in multisensory perception.&rdquo;
+    (two psychophysical, one EEG study)</p>
+
+<p>Tasks included:</p>
+
+<ul>
+<li>Investigation of visual-olfactory interactions via response time modeling.</li>
+<li>Development of a new method for taste sensitivity estimation.</li>
+<li>Setup and calibration of laboratory equipment, and thorough verification of
+temporal properties of the entire stimulation apparatus.</li>
+<li>Supervision of Bachelors and Masters students and interns.
+<br /></li>
+</ul>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row experience">
+      
+      <div class="col-auto text-center flex-column d-none d-sm-flex">
+        <div class="row h-50">
+          <div class="col border-right">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="m-2">
+          <span class="badge badge-pill border ">&nbsp;</span>
+        </div>
+        <div class="row h-50">
+          <div class="col ">&nbsp;</div>
+          <div class="col">&nbsp;</div>
+        </div>
+      </div>
+      
+      <div class="col py-2">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title exp-title text-muted mt-0 mb-1">Graduate and postgraduate studies</h4>
+            <h4 class="card-title exp-company text-muted my-0"><a href="http://www.ovgu.de/en/" target="_blank" rel="noopener">University of Magdeburg</a></h4>
+            <div class="text-muted exp-meta">
+              Oct 2005 –
+              
+                Jun 2013
+              
+              
+                <span class="middot-divider"></span>
+                <span>Magdeburg, Germany</span>
+              
+            </div>
+            <div class="card-text">Diploma (M.Eng.) program in Biosystems Engineering. From 2009 to 2013, I
+  worked as a student research assistant at the Leibniz Institute for Neurobiology,
+  supervised by  Lars T Boenke and Frank W Ohl. The work was focused on audio-visual
+  interactions and time perception, specifically, temporal-order judgment (TOJ)
+  and simultaneity judgment (SJ). My student research project employed the
+  double-flash illusion, and my thesis work investigated the McGurk/MacDonald illusion.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+
+  <section id="contact" class="home-section wg-contact   "  >
+    <div class="container">
+      
+
+
+
+
+
+<div class="row contact-widget">
+  <div class="col-12 col-lg-4 section-heading">
+    <h1>Contact</h1>
+    
+  </div>
+  <div class="col-12 col-lg-8">
+    
+
+    
+
+    <ul class="fa-ul">
+
+      
+      <li>
+        <i class="fa-li fas fa-envelope fa-2x" aria-hidden="true"></i>
+        <span id="person-email"><a href="mailto:richard@hoechenberger.net">richard@hoechenberger.net</a></span>
+      </li>
+      
+
+      
+
+      
+      
+
+      
+
+      
+
+      
+
+      
+      
+
+    </ul>
+
+    
+
+  </div>
+</div>
+
+    </div>
+  </section>
+
+
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3227ab49eed49815d1b4ba40154f74e7.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
