@@ -13,6 +13,14 @@
     </image>
     
     <item>
+      <title>**Richard Höchenberger***</title>
+      <link>/authors/richard-hochenberger/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/authors/richard-hochenberger/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Alexander Rockhill</title>
       <link>/authors/alexander-rockhill/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
@@ -113,14 +121,6 @@
       <link>/authors/maximilien-chaumon/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/authors/maximilien-chaumon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Richard Höchenberger</title>
-      <link>/authors/richard-hochenberger/</link>
-      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/richard-hochenberger/</guid>
       <description></description>
     </item>
     
@@ -229,7 +229,7 @@
     </item>
     
     <item>
-      <title>Sherlley Amsellem</title>
+      <title>Sherlley Amsellem*</title>
       <link>/authors/sherlley-amsellem/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       <guid>/authors/sherlley-amsellem/</guid>
