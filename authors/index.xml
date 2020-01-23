@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>Kathrin Ohla</title>
-      <link>/authors/kathrin-ohla/</link>
+      <title>**Richard Höchenberger**</title>
+      <link>/authors/richard-hochenberger/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/kathrin-ohla/</guid>
+      <guid>/authors/richard-hochenberger/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Richard Höchenberger</title>
-      <link>/authors/richard-hochenberger/</link>
+      <title>Kathrin Ohla</title>
+      <link>/authors/kathrin-ohla/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/authors/richard-hochenberger/</guid>
+      <guid>/authors/kathrin-ohla/</guid>
       <description></description>
     </item>
     
@@ -229,10 +229,18 @@
     </item>
     
     <item>
-      <title>Sherlley Amsellem</title>
-      <link>/authors/sherlley-amsellem/</link>
+      <title>**Richard Höchenberger&amp;ast;**</title>
+      <link>/authors/richard-hochenbergerast/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
-      <guid>/authors/sherlley-amsellem/</guid>
+      <guid>/authors/richard-hochenbergerast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sherlley Amsellem&amp;ast;</title>
+      <link>/authors/sherlley-amsellemast/</link>
+      <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/sherlley-amsellemast/</guid>
       <description></description>
     </item>
     
