@@ -5,12 +5,20 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Richard Höchenberger</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 19 Dec 2019 20:53:14 +0100</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Richard Höchenberger</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Repeatability of Taste Recognition Threshold Measurements with QUEST and quick Yes–No</title>
+      <link>/publication/hoechenberger-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/hoechenberger-2020/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>webtaste</title>
@@ -33,14 +41,6 @@
       <link>/publication/appelhoff-2019/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/publication/appelhoff-2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Repeatability of Taste Recognition Threshold Measurements with QUEST and quick Yes–No</title>
-      <link>/publication/hoechenberger-2020/</link>
-      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/hoechenberger-2020/</guid>
       <description></description>
     </item>
     
