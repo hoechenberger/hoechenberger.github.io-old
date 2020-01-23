@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>**Richard Höchenberger*** | Richard Höchenberger</title>
+    <title>Richard Höchenberger</title>
     <link>/authors/richard-hochenberger/</link>
       <atom:link href="/authors/richard-hochenberger/index.xml" rel="self" type="application/rss+xml" />
-    <description>**Richard Höchenberger***</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <description>Richard Höchenberger</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
-      <title>**Richard Höchenberger***</title>
+      <title>Richard Höchenberger</title>
       <link>/authors/richard-hochenberger/</link>
     </image>
+    
+    <item>
+      <title>Repeatability of Taste Recognition Threshold Measurements with QUEST and quick Yes–No</title>
+      <link>/publication/hoechenberger-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/hoechenberger-2020/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>MNE-BIDS: Organizing electrophysiological data into the BIDS format and facilitating their analysis</title>
       <link>/publication/appelhoff-2019/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/publication/appelhoff-2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Repeatability of Taste Recognition Threshold Measurements with QUEST and quick Yes–No</title>
-      <link>/publication/hoechenberger-2020/</link>
-      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/hoechenberger-2020/</guid>
       <description></description>
     </item>
     

@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Authors</title>
@@ -13,9 +13,17 @@
     </image>
     
     <item>
-      <title>**Richard Höchenberger***</title>
+      <title>Kathrin Ohla</title>
+      <link>/authors/kathrin-ohla/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/kathrin-ohla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Richard Höchenberger</title>
       <link>/authors/richard-hochenberger/</link>
-      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/authors/richard-hochenberger/</guid>
       <description></description>
     </item>
@@ -81,14 +89,6 @@
       <link>/authors/kambiz-tavabi/</link>
       <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/authors/kambiz-tavabi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kathrin Ohla</title>
-      <link>/authors/kathrin-ohla/</link>
-      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/kathrin-ohla/</guid>
       <description></description>
     </item>
     
@@ -229,7 +229,7 @@
     </item>
     
     <item>
-      <title>Sherlley Amsellem*</title>
+      <title>Sherlley Amsellem</title>
       <link>/authors/sherlley-amsellem/</link>
       <pubDate>Thu, 01 Mar 2018 00:00:00 +0000</pubDate>
       <guid>/authors/sherlley-amsellem/</guid>
